@@ -528,28 +528,5 @@
             if(camera) { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); }
         });
     </script>
-    <audio id="nhacnen" loop>
-  <source src="./audio.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  // Script này giúp phát nhạc khi người dùng tương tác (click/cuộn/gõ phím)
-  function phatNhac() {
-    var audio = document.getElementById("nhacnen");
-    // Nếu nhạc chưa phát thì phát
-    if (audio.paused) {
-      audio.play().then(() => {
-        console.log("Đã phát nhạc thành công!");
-      }).catch(error => {
-        console.log("Vẫn bị chặn: ", error);
-      });
-    }
-    // Sau khi click một lần thì gỡ sự kiện này đi để không lặp lại
-    document.removeEventListener('click', phatNhac);
-  }
-
-  // Lắng nghe cú click chuột bất kỳ đâu trên trang
-  document.addEventListener('click', phatNhac);
-</script>
 </body>
 </html>
